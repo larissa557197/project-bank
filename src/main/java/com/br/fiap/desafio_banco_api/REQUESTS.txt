@@ -1,0 +1,46 @@
+REQUESTS
+- HOME:
+    GET - http://localhost:8080/
+
+- LISTAR TODAS AS CONTAS:
+    GET - http://localhost:8080/contas
+
+- CRIAR UMA CONTA BANCÁRIA:
+    POST - http://localhost:8080/contas 
+
+    JSON:
+    {
+	"nomeTitular": "Maria",
+	"cpfTitular": "12345678909",
+	"saldoInicial": 2000.00,
+	"tipo": "POUPANCA"
+    }
+
+- BUSCAR POR ID:
+    GET - http://localhost:8080/contas/1
+
+- BUSCAR POR CPF:
+    GET - http://localhost:8080/contas/cpf/12345678909
+
+- ENCERRAR UMA CONTA:
+    PUT - http://localhost:8080/contas/2/encerrar
+
+- DEPOSITAR DINHEIRO:
+    PUT - http://localhost:8080/contas/1/deposito
+    BODY -> JSON:
+        500.00
+
+- SACAR DINHEIRO:
+    PUT - http://localhost:8080/contas/1/saque
+    BODY -> JSON:
+        500.00
+
+- REALIZAR UM PIX:
+    PUT - http://localhost:8080/contas/1/pix
+    BODY -> JSON:
+        {
+	        "idDestino": 2,
+	        "valor": 100.0
+        }
+
+        
